@@ -1,4 +1,5 @@
 import Button from './Button'
+import List from './List'
 import Text from './Text'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Button color="blue">Envoyer</Button>
       <Button>Contacter</Button>
       <Text />
+      <List />
     </>
   )
 }
