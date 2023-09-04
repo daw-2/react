@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+
+        let name = 'Fiorella';
+        function fullNameOld(n) {
+            return n + ' Mota';
+        }
+        const fullName = (n) => `${n} Mota`;
+        const user = {
+            name,
+            avatar: 'https://i.pravatar.cc/100',
+        };
+
+        function Welcome({ name, age }) {
+            if (age) {
+                return <h1>Bonjour {name ? fullName(name) : 'Inconnu'}, tu as {age} ans</h1>;
+            }
+
+            return (
+                <div>
+                    {name && <h1>Bonjour {fullName(name)}</h1>}
+                </div>
+            );
+        }
+
+        function Card({ children }) {
+            return <h2>{children}</h2>;
+        }
+
+        const title = <h2>Liste</h2>;
+        const peoples = ['Marina', 'Fiorella', 'Matthieu'/*, <li>Toto</li>*/];
+
+        function App() {
+            return (
+                <div>
+                    <h1>Bonjour {fullName(name)}</h1>
+                    <img src={user.avatar} alt={user.name} style={{ borderRadius: 50 }} />
+                    <p>Il est {new Date().toLocaleTimeString()}</p>
+                    <Welcome name="Fiorella" age={3} />
+                    <Welcome name="Titi" />
+                    <Welcome name="Tutu" />
+                    <Card>Quelque chose</Card>
+                    {title}
+                    <ul>
+                        {peoples.map((people, index) =>
+                            <li key={index}>{people}</li>
+                        )}
+                    </ul>
+                </div>
+            );
+        }
+
+        const render = () => {
+            root.render(<App />);
+        }
+
+        render();
+        setInterval(() => {
+            name = 'Toto';
+            render();
+        }, 1000);
+    </script>
+  </body>
+</html>
