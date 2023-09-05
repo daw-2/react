@@ -2,6 +2,7 @@ import Button from './Button'
 import List from './List'
 import Text from './Text'
 import Props2 from './exercices/Props2'
+import Props3 from './exercices/Props3'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
 
       <h2>Exercices state + props + event</h2>
       <Props2 />
+      <Props3 />
     </>
   )
 }
