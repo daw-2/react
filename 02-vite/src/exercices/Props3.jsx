@@ -32,17 +32,15 @@ const VegetablesCart = ({ vegetables }) => {
 
 const Student = ({ student }) => <li>{student.name} a {student.age} ans</li>
 
-const Students = ({ students }) => {
-  return (
-    <div>
-      <ul>
-        {students.map((student, index) =>
-          <Student student={student} key={index} />
-        )}
-      </ul>
-    </div>
-  );
-}
+const Students = ({ students }) => (
+  <div>
+    <ul>
+      {students.map((student, index) =>
+        <Student student={student} key={index} />
+      )}
+    </ul>
+  </div>
+);
 
 export default function Props3() {
   const vegetables = listVegetables();
