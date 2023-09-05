@@ -10,6 +10,7 @@ import StateChallenge from './exercices/StateChallenge'
 import EventListenerChallenge from './exercices/EventListenerChallenge'
 import Clock from './Clock'
 import { useState } from 'react'
+import Ajax from './Ajax'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -41,6 +42,7 @@ function App() {
       {show && <Clock />}
       <Clock timezone="Asia/Tokyo" />
       <Clock timezone="America/New_York" />
+      <Ajax />
 
       <br /><br /><br /><br /><br />
     </>
