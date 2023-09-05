@@ -7,6 +7,7 @@ import Props2 from './exercices/Props2'
 import Props3 from './exercices/Props3'
 import Props5 from './exercices/Props5'
 import StateChallenge from './exercices/StateChallenge'
+import EventListenerChallenge from './exercices/EventListenerChallenge'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Counter init={3} max={10} />
       <StateChallenge />
       <EventListener3 />
+      <EventListenerChallenge />
 
       <br /><br /><br /><br /><br />
     </>
