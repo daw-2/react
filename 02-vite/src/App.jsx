@@ -11,6 +11,7 @@ import EventListenerChallenge from './exercices/EventListenerChallenge'
 import Clock from './Clock'
 import { useState } from 'react'
 import Ajax from './Ajax'
+import Lifecycle2 from './exercices/Lifecycle2'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -39,10 +40,13 @@ function App() {
 
       <h2>Le cycle de vie</h2>
       <button onClick={() => setShow(!show)}>Voir</button>
-      {show && <Clock />}
+      {/*{show && <Clock />}
       <Clock timezone="Asia/Tokyo" />
       <Clock timezone="America/New_York" />
-      <Ajax />
+      <Ajax/>*/}
+
+      <h2>Exercices lifecycle + ajax</h2>
+      <Lifecycle2 />
 
       <br /><br /><br /><br /><br />
     </>
