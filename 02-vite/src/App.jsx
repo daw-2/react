@@ -1,6 +1,7 @@
 import Button from './Button'
 import List from './List'
 import Text from './Text'
+import Props2 from './exercices/Props2'
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <Button>Contacter</Button>
       <Text />
       <List />
+
+      <h2>Exercices state + props + event</h2>
+      <Props2 />
     </>
   )
 }
