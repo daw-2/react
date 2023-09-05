@@ -79,7 +79,7 @@ export default function EventListenerChallenge() {
       </ul>
       <ul>
         {birds.map((bird, index) =>
-          <li>
+          <li key={index}>
             {bird.name} a {bird.age} ans.
             {bird.isColorDisplayed && <span> Il est {bird.color}.</span>}
             <input type="text" value={bird.color} onChange={(e) => updateBird(index, e.target.value)} />

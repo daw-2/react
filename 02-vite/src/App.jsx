@@ -8,13 +8,18 @@ import Props3 from './exercices/Props3'
 import Props5 from './exercices/Props5'
 import StateChallenge from './exercices/StateChallenge'
 import EventListenerChallenge from './exercices/EventListenerChallenge'
+import Clock from './Clock'
+import { useState } from 'react'
 
 function App() {
+  const [show, setShow] = useState(true);
+
   return (
     <>
       <h1>Salut React</h1>
 
-      <h2>Présentation state</h2>
+      <div>
+      {/*<h2>Présentation state</h2>
       <Button color="blue">Envoyer</Button>
       <Button>Contacter</Button>
       <Text />
@@ -28,7 +33,14 @@ function App() {
       <Counter init={3} max={10} />
       <StateChallenge />
       <EventListener3 />
-      <EventListenerChallenge />
+      <EventListenerChallenge />*/}
+      </div>
+
+      <h2>Le cycle de vie</h2>
+      <button onClick={() => setShow(!show)}>Voir</button>
+      {show && <Clock />}
+      <Clock timezone="Asia/Tokyo" />
+      <Clock timezone="America/New_York" />
 
       <br /><br /><br /><br /><br />
     </>
