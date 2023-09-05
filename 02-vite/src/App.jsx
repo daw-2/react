@@ -5,6 +5,7 @@ import Counter from './exercices/Counter'
 import Props2 from './exercices/Props2'
 import Props3 from './exercices/Props3'
 import Props5 from './exercices/Props5'
+import StateChallenge from './exercices/StateChallenge'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Props5 />
       <Counter />
       <Counter init={3} max={10} />
+      <StateChallenge />
 
       <br /><br /><br /><br /><br />
     </>
