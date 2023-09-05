@@ -59,16 +59,26 @@ export default function EventListenerChallenge() {
     }
   }
 
+  const updateBird = (index, newColor) => {
+    birds[index].color = newColor;
+
+    setBirds([ ...birds ]);
+  }
+
   return (
     <div>
       <ul>
         <li>Afficher chaque oiseau dans une boucle map</li>
       </ul>
       <ul>
-        {birds.map(bird =>
+        {birds.map((bird, index) =>
           <li>
             {bird.name} a {bird.age} ans.
             {bird.isColorDisplayed && <span> Il est {bird.color}.</span>}
+            <input type="text" value={bird.color} onChange={(e) => updateBird(index, e.target.value)} />
+            <button onClick={() => setBirds(birds.filter((b, i) => index !== i))}>
+              Supprimer
+            </button>
           </li>
         )}
       </ul>
