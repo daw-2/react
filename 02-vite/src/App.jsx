@@ -2,6 +2,7 @@ import Button from './Button'
 import List from './List'
 import Text from './Text'
 import Counter from './exercices/Counter'
+import EventListener3 from './exercices/EventListener3'
 import Props2 from './exercices/Props2'
 import Props3 from './exercices/Props3'
 import Props5 from './exercices/Props5'
@@ -25,6 +26,7 @@ function App() {
       <Counter />
       <Counter init={3} max={10} />
       <StateChallenge />
+      <EventListener3 />
 
       <br /><br /><br /><br /><br />
     </>
