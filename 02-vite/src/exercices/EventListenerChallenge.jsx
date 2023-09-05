@@ -60,9 +60,16 @@ export default function EventListenerChallenge() {
   }
 
   const updateBird = (index, newColor) => {
-    birds[index].color = newColor;
+    // birds[index].color = newColor;
+    // setBirds([ ...birds ]);
 
-    setBirds([ ...birds ]);
+    setBirds(birds.map((bird, i) => {
+      if (i === index) {
+        return { ...bird, color: newColor }
+      } else {
+        return bird;
+      }
+    }));
   }
 
   return (
