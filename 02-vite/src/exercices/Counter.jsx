@@ -4,7 +4,10 @@ function Counter({ init = 0, max = Infinity }) {
   const [count, setCount] = useState(init);
 
   const increment = () => {
-    setCount(count + 1);
+    // Rappel, le state est asynchrone
+    setCount((c) => c + 1); // 0 + 1
+    setCount((c) => c + 1); // 1 + 1
+    setCount((c) => c + 1); // 2 + 1
   }
 
   const decrement = () => setCount(count - 1);
