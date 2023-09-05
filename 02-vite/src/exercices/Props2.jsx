@@ -26,6 +26,7 @@ const Button = ({ text }) => <button>{text}</button>;
 const Image = ({ source }) => (
   <img src={source} width={300} />
 );
+const Raw = ({ html }) => <div dangerouslySetInnerHTML={{  __html: html }}></div>;
 
 function Props2() {
   return (
@@ -35,6 +36,7 @@ function Props2() {
       <Button text="Bubu" />
       <Button text="bababa" />
       <Image source="https://media.inmobalia.com/imgV1/B98Le8~d7M9k3DegigWkzHXQlgzMFGqGJJp6ZRUcpX033lqadFBp2i4GGW4X2J1jIJ9Pwc6GsJX5cPSaC8Y5L~JfyHds9HljFKbIihOkX3Hq5C9d69~GwVQAUJ3F~nk7fQh0UAqAYi7r3tGF4MzRyAahwYUUdBGcpIv62graeAG8w~8wUqYBXzLX2fvWEnUTQLuqRdONy5WACPmyO8uqKAHjHemV6z~5jgt8AQg7cew~6RB3PVf3qGWecjwBIeE1gPVvPLV3hrMoCZbpm9URzDnYisb5CD3BHYx3qe9hkFGi2MpOpzK2DLeQMSnujni41g--.jpg" />
+      <Raw html="<h1>Bubu</h1>" />
     </div>
   )
 }
