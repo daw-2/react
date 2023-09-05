@@ -26,7 +26,11 @@ const Button = ({ text }) => <button>{text}</button>;
 const Image = ({ source }) => (
   <img src={source} width={300} />
 );
-const Raw = ({ html }) => <div dangerouslySetInnerHTML={{  __html: html }}></div>;
+const Raw = ({ html }) => {
+  console.log(html);
+
+  return <div dangerouslySetInnerHTML={{  __html: html }}></div>;
+};
 
 function Props2() {
   return (
