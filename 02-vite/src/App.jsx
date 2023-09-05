@@ -12,6 +12,7 @@ import Clock from './Clock'
 import { useState } from 'react'
 import Ajax from './Ajax'
 import Lifecycle2 from './exercices/Lifecycle2'
+import Ajax1 from './exercices/Ajax1'
 
 function App() {
   const [show, setShow] = useState(true);
@@ -47,6 +48,7 @@ function App() {
 
       <h2>Exercices lifecycle + ajax</h2>
       <Lifecycle2 />
+      <Ajax1 />
 
       <br /><br /><br /><br /><br />
     </>
