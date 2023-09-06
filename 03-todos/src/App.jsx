@@ -1,11 +1,10 @@
+import { Outlet } from 'react-router-dom';
+
 function App() {
   return (
-    <>
-      <div className="container">
-        <input type="text" />
-        <span role="button">OK</span>
-      </div>
-    </>
+    <div className="container">
+      <Outlet />
+    </div>
   );
 }
 
