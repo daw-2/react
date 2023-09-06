@@ -1,13 +1,14 @@
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 function App() {
   return (
     <>
       <header>
         <nav>
-          <Link to="/">Accueil</Link>
-          <Link to="/a-propos">A propos</Link>
-          <Link to="/cycle-de-vie">Cycle de vie</Link>
+          <NavLink to="/">Accueil</NavLink>
+          <NavLink to="/a-propos">A propos</NavLink>
+          <NavLink to="/cycle-de-vie">Cycle de vie</NavLink>
+          <NavLink to="/bonjour/fiorella">Hello Fiorella</NavLink>
         </nav>
       </header>
 

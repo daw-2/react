@@ -2,3 +2,12 @@
     background-color: #000;
     color: #fff;
 }
+
+nav a {
+    padding: 0 10px 10px 10px;
+    text-decoration: none;
+}
+
+nav a:hover, nav a.active {
+    border-bottom: 2px solid lightblue;
+}
