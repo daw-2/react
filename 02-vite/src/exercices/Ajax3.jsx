@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Button from '../Button';
 
 function Example() {
@@ -42,22 +42,36 @@ export const useFetch = (url) => {
 const toUpper = (text) => text.toUpperCase();
 
 function Todos() {
-  const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos?_limit=3');
+  const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos?_limit=10');
   const { data: todos, loading, count } = useFetch(url);
   const [type, setType] = useState('all'); // all, completed, uncompleted
+
+  // useMemo met en cache un "calcul" et refais ce calcul
+  // Si le tableau de dépendances change
+  const filteredTodos = useMemo(() => {
+    console.log('log');
+    return todos.filter((t) => {
+      return type === 'all' || type === 'completed' && t.completed
+        || type === 'uncompleted' && !t.completed;
+    });
+  }, [todos, type]);
 
   return (
     <>
       {loading && <p>{toUpper('Chargement...')}</p>}
       {!loading &&
         <>
-          <h2>{count} todos</h2>
+          <h2>{filteredTodos.length} todos</h2>
           <ul>
-            {todos.map(todo => <li key={todo.id}>{todo.title}</li>)}
+            {filteredTodos.map(todo =>
+              <li key={todo.id}>
+                {todo.title} {todo.completed && '✅'}
+              </li>
+            )}
           </ul>
-          <Button>All</Button>
-          <Button>Completed</Button>
-          <Button>Uncompleted</Button>
+          <Button onClick={(name) => setType('all')} className="btn">All</Button>
+          <Button onClick={(name) => setType('completed')}>Completed</Button>
+          <Button onClick={(name) => setType('uncompleted')}>Uncompleted</Button>
           <button onClick={() => setUrl('https://jsonplaceholder.typicode.com/todos?_limit=6')}>
             Page suivante
           </button>
