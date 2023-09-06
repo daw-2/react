@@ -13,7 +13,7 @@ function Home() {
   return (
     <>
       <Header todos={todos} />
-      <TodoForm />
+      <TodoForm onNew={(todo) => setTodos([ ...todos, todo ])} />
       <TodoList todos={todos} />
     </>
   );
