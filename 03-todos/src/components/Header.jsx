@@ -1,6 +1,6 @@
-function Header() {
+function Header({ todos }) {
   return (
-    <h1>Todo List 1 (3 todos)</h1>
+    <h1>Todo List 1 ({todos.length} todos)</h1>
   );
 }
 

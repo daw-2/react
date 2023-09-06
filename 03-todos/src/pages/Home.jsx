@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header todos={todos} />
       FORM
       LIST
         TODO
