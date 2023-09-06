@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from '../components/Header';
+import TodoList from '../components/TodoList';
 
 function Home() {
   const [todos, setTodos] = useState([
@@ -12,8 +13,7 @@ function Home() {
     <>
       <Header todos={todos} />
       FORM
-      LIST
-        TODO
+      <TodoList todos={todos} />
     </>
   );
 }
