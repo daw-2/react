@@ -45,6 +45,7 @@ function Todos() {
   const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos?_limit=10');
   const { data: todos, loading, count } = useFetch(url);
   const [type, setType] = useState('all'); // all, completed, uncompleted
+  const [name, setName] = useState('toto');
 
   // useMemo met en cache un "calcul" et refais ce calcul
   // Si le tableau de dépendances change
@@ -58,6 +59,7 @@ function Todos() {
 
   return (
     <>
+      <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       {loading && <p>{toUpper('Chargement...')}</p>}
       {!loading &&
         <>
