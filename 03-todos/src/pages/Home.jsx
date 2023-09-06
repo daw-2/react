@@ -12,9 +12,9 @@ function Home() {
 
   return (
     <>
-      <Header todos={todos} />
+      <Header /*todos={todos}*/ />
       <TodoForm onNew={(todo) => setTodos([ ...todos, todo ])} />
-      <TodoList todos={todos} />
+      <TodoList /*todos={todos}*/ />
     </>
   );
 }

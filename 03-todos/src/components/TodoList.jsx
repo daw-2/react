@@ -1,6 +1,16 @@
+import { useDispatch, useSelector } from 'react-redux';
 import Todo from './Todo';
+import { useEffect } from 'react';
+import { fetchTodos } from '../store';
 
-function TodoList({ todos }) {
+function TodoList(/*{ todos }*/) {
+  const todos = useSelector(state => state.todo);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchTodos());
+  }, []);
+
   return (
     <div>
       {todos.map(todo =>
