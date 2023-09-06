@@ -73,10 +73,11 @@ const Cats = () => {
 
 const Photos = () => {
   const [photos, setPhotos] = useState([]);
+  const [page, setPage] = useState(1);
 
-  useEffect(() => fetchPhotos(), []);
+  useEffect(() => fetchPhotos(), [page]);
 
-  const fetchPhotos = (page = 1) => {
+  const fetchPhotos = () => {
     axios.get('https://jsonplaceholder.typicode.com/photos?_limit=10&_page='+page).then(response => {
       setPhotos([ ...photos, ...response.data ]);
     });
@@ -84,14 +85,14 @@ const Photos = () => {
 
   return (
     <div>
-      <h2>Photos</h2>
+      <h2>Photos (Page {page})</h2>
       {photos.map(photo =>
         <div key={photo.id}>
           {photo.id}
           <img src={photo.url} width={100} />
         </div>
       )}
-      <button onClick={() => fetchPhotos(2)}>Go</button>
+      <button onClick={() => setPage(page + 1)}>Go</button>
     </div>
   );
 }
