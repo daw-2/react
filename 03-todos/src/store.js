@@ -22,6 +22,17 @@ const todoSlice = createSlice({
       // { payload: 20 }
       return state.filter(t => t.id !== action.payload);
     },
+    toggle: (state, action) => {
+      // { payload: 20 }
+      const todo = state.find(t => t.id === action.payload);
+      todo.done = !todo.done;
+    },
+    edit: (state, action, bb) => {
+      // { payload: 20 }
+      const { id, name } = action.payload;
+      const todo = state.find(t => t.id === id);
+      todo.name = name;
+    },
     init: (state, action) => {
       return action.payload.map(todo => ({
         ...todo, name: todo.title, done: todo.completed
@@ -30,10 +41,10 @@ const todoSlice = createSlice({
   },
 });
 
-export const { add, remove, init } = todoSlice.actions;
+export const { add, remove, toggle, edit, init } = todoSlice.actions;
 
 export const fetchTodos = () => async (dispatch) => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+  const response = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=3');
   dispatch(init(response.data));
 }
 
